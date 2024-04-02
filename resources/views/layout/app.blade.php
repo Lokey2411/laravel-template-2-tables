@@ -10,11 +10,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/bootstrap-grid.css', 'resources/css/bootstrap-reboot.css', 'resources/css/bootstrap.css', 'resources/js/app.js'])
+    @vite(['resources/css/bootstrap-grid.css', 'resources/css/bootstrap-reboot.css', 'resources/css/bootstrap.css', 'resources/css/app.css'])
     <!-- Styles -->
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    @include('components.navbar')
     @yield('content')
 </body>
 

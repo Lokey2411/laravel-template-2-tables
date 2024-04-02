@@ -11,6 +11,6 @@ class Product extends Model
     public $timestamps = false;
     public function shop()
     {
-        return $this->belongsTo(Shop::class);
+        return $this->belongsTo(Shop::class, "shopId", "id");
     }
 }

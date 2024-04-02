@@ -1,0 +1,14 @@
+composer create-project laravel/laravel template-2-bang// tao project
+code template-2-bang// mo trong vs code
+php artisan make:model Product -m -c -s// tạo model kết hợp migration, controller, seeder
+php artisan migrate// tạo bảng
+php artisan serve // chạy php
+yarn/ npm install // kéo project về lần đầu thì chạy
+npm run dev/yarn dev //chạy vite kết nối css 
+
+ALTER TABLE products ADD FOREIGN KEY (shopId) REFERENCES shops(id);
+
+- route
+- lấy dữ liệu từ fe
+- import các thư viện
+- controller
