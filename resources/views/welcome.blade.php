@@ -1,5 +1,6 @@
 @extends('layout.app')
 @section('content')
+    @include('components.messages')
     <button class="btn btn-danger mb-3" onclick="openCreateForm()">Create</button>
     <table class="table table-dark table-hover">
         <thead>
@@ -24,17 +25,22 @@
                         <div id="confirm-{{ $s->id }}"
                             class="fixed-top fixed-bottom model justify-content-center align-items-center modal d-none">
                             <div class="bg-light w-50 p-5 rounded-2">
-                                <p>Are you sure you want to delete this shop?</p>
+                                <p class="text-black">Are you sure you want to delete this shop?</p>
                                 <button type="button" class="btn btn-danger rounded p-2"
                                     onclick="document.getElementById('confirm-{{ $s->id }}').classList.add('d-none');
                                     document.getElementById('confirm-{{ $s->id }}').classList.remove('d-flex'); ">Cancel</button>
-                                <form action="{{ route('shops.destroy', $s->id) }}" method="POST"><button type="submit"
-                                        class="btn btn-primary rounded p-2">
+                                <form action="{{ route('shops.destroy', $s->id) }}" method="POST">
+                                    <button type="submit" class="btn btn-primary rounded p-2">
                                         @csrf
                                         @method('DELETE')
-                                        Delete</button></form>
+                                        Delete</button>
+                                </form>
                             </div>
                         </div>
+                        {{-- pop-up 1 -> push action -> route(shops.destroy,1) --}}
+                        {{-- pop-up 2 -> push action -> route(shops.destroy,2) --}}
+                        {{-- pop-up 3 -> push action -> route(shops.destroy,3) --}}
+                        {{-- pop-up 4 -> push action -> route(shops.destroy,4) --}}
                     </td>
                 </tr>
             @endforeach

@@ -15,7 +15,7 @@ class ShopController extends Controller
             "email" => "required|email",
             "address" => "required"
         ]);
-        $oldShop = Shop::where("name", "LIKE", "%" . $request->name . "%");
+        $oldShop = Shop::where("name", "LIKE", $request->name)->first();
         if ($oldShop)
             return redirect(route("home"))->with("error", "Shop has been created");
         $shop = new Shop();
@@ -38,7 +38,7 @@ class ShopController extends Controller
             $p->delete();
         }
         $shop->delete();
-        return redirect("home")->with("message", "Shop deleted successfully");
+        return redirect(route("home"))->with("message", "Shop deleted successfully");
     }
     public function update(Request $request, $id)
     {
